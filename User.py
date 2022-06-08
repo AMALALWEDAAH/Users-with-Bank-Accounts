@@ -1,4 +1,6 @@
 from BankAccount import BankAccount
+
+
 class User:
     def __init__(self, name, email, account_balance=0):
         pass
@@ -38,13 +40,20 @@ nora = User('nora', 'nora@python.com', 1000)
 Sara = User('Sara', 'Sara@python.com', 3000)
 lama = User('lama', 'lama@python.com', 4000)
 
-print(Sara.account.deposit(400).deposit(20).deposit(
-    10).withdraw(700).yield_interest().balance)
+nora = BankAccount(0.02, 1000)
+Sara = BankAccount(0.02, 3000)
+
+
+print('User:Sara')
+
+Sara.deposit(10).deposit(20).deposit(30).withdraw(
+    70).yield_interest().display_account_info()
+
 
 print('User:nora')
-print(nora.account.deposit(400).deposit(20).withdraw(400).withdraw(
-    80).withdraw(200).withdraw(40).yield_interest().balance)
-print(nora.display_account_info())
+nora.deposit(400).deposit(20).withdraw(20).withdraw(80).withdraw(
+    200).withdraw(40).yield_interest().display_account_info()
+
 # nora.make_deposit(100)
 # print(nora.account_balance)
 # nora.make_withdrawal(444)
